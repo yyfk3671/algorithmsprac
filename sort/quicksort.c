@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "myheader.h"
 
 void QuickSort(int *, int, int);
 void printAry(const int *, int);
@@ -6,6 +7,9 @@ void printAry(const int *, int);
 int main(int argc, char **argv)
 {
 		int a[10] = {13,23,24,10,45,56,1,5,39,47};
+		int len;
+		GetSizeOfArray(a, len)
+		printf("数组长度为: %d\n", len);
 		printf("before sorted:\n\t");
 		printAry(a, 10);
 		QuickSort(a, 0, 9);
@@ -28,7 +32,7 @@ void QuickSort(int * p, int left, int right)
 		int i = left;
 		int j = right;
 		int key = p[left];
-		
+
 		while(i < j)
 		{
 				while(i < j && key <= p[j])
@@ -37,7 +41,7 @@ void QuickSort(int * p, int left, int right)
 				}
 
 				p[i] = p[j];
-				
+
 				while(i < j && key >= p[i])
 				{
 						i++;
@@ -45,7 +49,7 @@ void QuickSort(int * p, int left, int right)
 
 				p[j] = p[i];
 		}
-		
+
 		p[i] = key;
 		QuickSort(p, left, i -1);
 		QuickSort(p, i + 1, right);
