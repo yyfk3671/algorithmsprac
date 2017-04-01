@@ -4,6 +4,9 @@
 void QuickSort(int *, int, int);
 void printAry(const int *, int);
 
+/*
+ *main
+ */
 int main(int argc, char **argv)
 {
 		int a[10] = {13,23,24,10,45,56,1,5,39,47};
