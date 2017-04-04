@@ -4,17 +4,20 @@
 void QuickSort(int *, int, int);
 void printAry(const int *, int);
 
+int * ary = 0;
 /*
  *main
  */
 int main(int argc, char **argv)
 {
 		int a[10] = {13,23,24,10,45,56,1,5,39,47};
+		ary = a;
 		int len;
 		GetSizeOfArray(a, len);
 		printf("数组长度为: %d\n", len);
 		printf("before sorted:\n\t");
 		printAry(a, 10);
+		printf("\n");
 		QuickSort(a, 0, 9);
 		printf("after sorted:\n\t");
 		printAry(a, 10);
@@ -44,6 +47,8 @@ void QuickSort(int * p, int left, int right)
 				}
 
 				p[i] = p[j];
+				printf("get smaller: ");
+				printAry(ary, 10);
 
 				while(i < j && key >= p[i])
 				{
@@ -51,9 +56,13 @@ void QuickSort(int * p, int left, int right)
 				}
 
 				p[j] = p[i];
+				printf("get bigger: ");
+				printAry(ary, 10);
 		}
 
 		p[i] = key;
+		printAry(ary, 10);
+		printf("\n");
 		QuickSort(p, left, i -1);
 		QuickSort(p, i + 1, right);
 }
