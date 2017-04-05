@@ -1,5 +1,8 @@
+#ifndef STDIO_H
+#define STDIO_H
 #include <stdio.h>
-#include "myheader.h"
+#endif
+#include "../myheader.h"
 
 void QuickSort(int *, int, int);
 void printAry(const int *, int);
