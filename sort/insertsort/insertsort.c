@@ -9,7 +9,7 @@ void insertsort(int*, int);
 
 int main(int argc, char **argv)
 {
-  int array[] = {9, 9, 7, 6, 5, 4, 3, 2, 1 ,0};
+  int array[] = {9, 8, 7, 6, 5, 4, 3, 2, 1 ,0};
   int size;
   GetSizeOfArray(array, size);
   printf("before sort:\n\t");
@@ -28,13 +28,13 @@ void insertsort(int *p, int size)
   {
     int j = i - 1;
     temp = p[i];
-    while(j > 0 && temp < p[j]) {
+    while(j >= 0 && temp < p[j]) {
       p[j+1] = p[j];
       printf("switch: ");
       printAry(p, size);
       j--;
     }
-    p[j] = temp;
+    p[j+1] = temp;
     printAry(p, size);
     printf("\n");
 
